@@ -26,7 +26,7 @@ unsigned char level =1;
 void colors()
 {
   unsigned char y;
-  for (y = 0; y < 199; y += 2)
+  for(y = 0; y < 199; y += 2)
   {
     poke(0xa000 + y * 40, 6);
     poke(0xa000 + 40 + y * 40, 3);
@@ -36,16 +36,19 @@ void colors()
 void setMoney()
 {
   unsigned char i,x,y;
-  for(i=0;i<5+level;++i)
+  for(i=0; i<5+level; ++i)
   {
-      x = rand()%39;
-      y = rand()%30;
+    x = rand()%39;
+    y = rand()%30;
 
-      if (levelMap[x+y*38] != 0)
-        {--i;}
-        else{
-          levelMap[x+y*38] = SPRITE_MONEY;
-        }
+    if(levelMap[x+y*38] != 0)
+    {
+      --i;
+    }
+    else
+    {
+      levelMap[x+y*38] = SPRITE_MONEY;
+    }
 
   }
 }
@@ -58,9 +61,9 @@ void printLevel(unsigned char level)
 
   setMoney();
 
-  for (y = 0; y < 30; ++y)
+  for(y = 0; y < 30; ++y)
   {
-    for (x = 0; x < 39; ++x)
+    for(x = 0; x < 39; ++x)
     {
       spriteBG(6 + x * 6, y * 6, levelMap[x + y * 39]);
     }
@@ -92,13 +95,13 @@ void main()
   printLevel(5);
 
   // sprite(7, 6, 3);
-  for (i = 40; i < 230; ++i)
+  for(i = 40; i < 230; ++i)
   {
-    sprite(i , 6, 3);
-     waitms(500);
+    sprite(i, 6, 3);
+    waitms(500);
     sprite(i, 6, 3);
 
-   
+
   }
 
   // sprite(24, 6, 2);

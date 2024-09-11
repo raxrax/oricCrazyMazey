@@ -122,10 +122,10 @@ xorbg2        eor   $1234,y
               and   #63
               ora   #64
 adst2         sta   $1234,y
-              
+
 
 ;           @ Check and continue the displacement cycle
-              
+
               cpy   _elementWidth
               bne   loopy
 

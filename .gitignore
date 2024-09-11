@@ -7,3 +7,5 @@ obj/
 *.HFE
 .vscode/
 
+test
+test.tap
